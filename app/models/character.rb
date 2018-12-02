@@ -90,6 +90,10 @@ class Character < ActiveRecord::Base
     }
   end
 
+  def full_name
+    "#{character_name} (#{family_name})"
+  end
+
   private
 
   def set_renown_score

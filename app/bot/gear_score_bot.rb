@@ -37,6 +37,10 @@ class GearScoreBot
     _bot.command :update do |event, *args|
       GearScoreBot::Command::Regular::Update.call!(event: event, args: args)
     end
+
+    _bot.command :list do |event, *args|
+      GearScoreBot::Command::Regular::List.call!(event: event, args: args)
+    end
   end
 
   def define_admin_commands!

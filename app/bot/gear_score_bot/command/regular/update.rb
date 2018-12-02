@@ -34,7 +34,7 @@ class GearScoreBot::Command::Regular::Update < GearScoreBot::Command::Base
       NO_CHAR_MSG
     else
       update_character!
-      @_channel.send_embed('Character has been added to the database', @_character.to_embed)
+      @_channel.send_embed('Character has been updated', @_character.to_embed)
     end
   rescue GearScoreBot::Command::Base::InvalidData => e
     "failed to update character: #{e.message}"

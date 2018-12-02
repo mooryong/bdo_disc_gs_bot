@@ -1,0 +1,1 @@
+gsbot: bundle exec rake bots:spawn['gear_score']

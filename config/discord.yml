@@ -1,0 +1,14 @@
+development:
+  token: 
+  bot_token: 
+  channel_id: 
+
+test:
+  token: 
+  bot_token: 
+  channel_id: 
+
+production:
+  token: <%= ENV.fetch("DISCORD_TOKEN") { '' } %>
+  bot_token: <%= ENV.fetch("DISCORD_BOT_TOKEN") { '' } %>
+  channel_id: <%= ENV.fetch("DISCORD_BOT_CHANNEL_ID") { '' } %>

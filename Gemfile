@@ -5,6 +5,8 @@ ruby '2.5.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1', '>= 5.2.1.1'
+
+# Default Windows PORT: 5433
 gem 'pg'
 
 # Use Puma as the app server

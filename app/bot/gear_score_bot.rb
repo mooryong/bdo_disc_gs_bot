@@ -31,11 +31,11 @@ class GearScoreBot
     end
 
     _bot.command :remove do |event|
-
+      GearScoreBot::Command::Regular::Remove.call!(event: event, args: nil)
     end
 
-    _bot.command :update do |event|
-
+    _bot.command :update do |event, *args|
+      GearScoreBot::Command::Regular::Update.call!(event: event, args: args)
     end
   end
 

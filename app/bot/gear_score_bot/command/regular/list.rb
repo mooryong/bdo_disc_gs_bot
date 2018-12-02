@@ -51,6 +51,6 @@ class GearScoreBot::Command::Regular::List < GearScoreBot::Command::Base
   end
 
   def build_row(character)
-    "#{character.full_name.ljust(30)} #{character.preawakening_attack_power.to_s.ljust(6)} #{character.awakening_attack_power.to_s.ljust(8)} #{character.defense_power.to_s.ljust(6)} #{character.renown_score.to_s.ljust(9)} #{character.level.to_s.ljust(5)} #{character.class_name.ljust(14)} #{character.updated_at}"
+    "#{character.full_name.ljust(30)} #{character.preawakening_attack_power.to_s.ljust(6)} #{character.awakening_attack_power.to_s.ljust(8)} #{character.defense_power.to_s.ljust(6)} #{character.renown_score.to_s.ljust(9)} #{character.level.to_s.ljust(5)} #{character.class_name.ljust(14)} #{character.updated_at}" + "\n"
   end
 end

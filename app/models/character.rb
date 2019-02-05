@@ -5,7 +5,7 @@ class Character < ActiveRecord::Base
   module Class
     ARCHER = 'archer'
     BERSERKER = 'berserker'
-    DARK_KNIGHT = 'dark knight'
+    DARK_KNIGHT = 'dark_knight'
     KUNOICHI = 'kunoichi'
     LAHN = 'lahn'
     MAEHWA = 'maehwa'
@@ -63,7 +63,7 @@ class Character < ActiveRecord::Base
         },
         {
           name: 'Class',
-          value: class_name.capitalize,
+          value: class_name.split('_').map { |str| str.capitalize }.join(' '),
           inline: true
         },
         {

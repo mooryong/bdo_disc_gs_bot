@@ -1,6 +1,6 @@
 class GearScoreBot::Command::Regular::List < GearScoreBot::Command::Base
   NO_CHAR_MSG = 'There are no characters'
-  ROWS_PER_PAGE = 15
+  ROWS_PER_PAGE = 12
   MSG_FORMATTER = '```'
 
   def initialize(event:, args:)

@@ -9,9 +9,9 @@ class GearScoreBot::Command::Regular::AddPic < GearScoreBot::Command::Base
 
     @_character = find_character!
     @_character.update_attributes!(image_url: @_raw_data[0])
-    @_channel.send_embed('Character has been added to the database', @_character.to_embed)
+    @_channel.send_embed('Image has been updated', @_character.to_embed)
   rescue GearScoreBot::Command::Base::InvalidData => e
-    "failed to add new character: #{e.message}"
+    "failed to update image: #{e.message}"
   rescue => e
     e.message
   end
@@ -21,7 +21,7 @@ class GearScoreBot::Command::Regular::AddPic < GearScoreBot::Command::Base
   def validate_data!
     data = @_raw_data[0]
 
-    return if data.blank? || URI::regexp.match?(data)
+    return if data.present? && URI::regexp.match?(data)
 
     raise GearScoreBot::Command::Base::InvalidData, "invalid URL provided"
   end

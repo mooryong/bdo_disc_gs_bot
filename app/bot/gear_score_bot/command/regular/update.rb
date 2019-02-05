@@ -60,9 +60,10 @@ class GearScoreBot::Command::Regular::Update < GearScoreBot::Command::Base
       awakening_attack_power: @_raw_data[ARG_INDEX_MAP[:awakening_ap]],
       defense_power: @_raw_data[ARG_INDEX_MAP[:dp]],
       level: @_raw_data[ARG_INDEX_MAP[:level]],
-      class_name: @_raw_data[ARG_INDEX_MAP[:class]],
-      image_url: @_raw_data[ARG_INDEX_MAP[:image_url]]
-    }
+      class_name: @_raw_data[ARG_INDEX_MAP[:class]]
+    }.tap do |data|
+      data.merge!({ image_url: @_raw_data[ARG_INDEX_MAP[:image_url]] }) if @_raw_data[ARG_INDEX_MAP[:image_url]].present?
+    end
   end
 
   def validate_data!

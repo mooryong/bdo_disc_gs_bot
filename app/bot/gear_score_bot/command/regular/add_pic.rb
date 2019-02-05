@@ -27,7 +27,7 @@ class GearScoreBot::Command::Regular::AddPic < GearScoreBot::Command::Base
   end
 
   def find_character!
-    Character.where(user_id: @_user_id).last!
+    Character.where(discord_id: @_user_id).last!
   rescue ActiveRecord::RecordNotFound
     raise StandardError, 'user does not have a character in the database'
   end

@@ -63,7 +63,7 @@ class Character < ActiveRecord::Base
         },
         {
           name: 'Class',
-          value: class_name.split('_').map { |str| str.capitalize }.join(' '),
+          value: formatted_class_name,
           inline: true
         },
         {
@@ -92,6 +92,10 @@ class Character < ActiveRecord::Base
 
   def full_name
     "#{character_name} (#{family_name})"
+  end
+
+  def formatted_class_name
+    class_name.split('_').map { |str| str.capitalize }.join(' ')
   end
 
   private

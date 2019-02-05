@@ -1,6 +1,6 @@
 class GearScoreBot::Command::Regular::List < GearScoreBot::Command::Base
   NO_CHAR_MSG = 'There are no characters'
-  ROWS_PER_PAGE = 8
+  ROWS_PER_PAGE = 12
   MSG_FORMATTER = '```'
 
   def initialize(event:, args:)
@@ -37,7 +37,7 @@ class GearScoreBot::Command::Regular::List < GearScoreBot::Command::Base
       table << build_row(character)
     end
 
-    table.partition.with_index { |_, idx| idx + 1 % 15 != 0}.select { |page| page.present? }.tap do |paginated_table|
+    table.partition.with_index { |_, idx| idx + 1 % ROWS_PER_PAGE != 0}.select { |page| page.present? }.tap do |paginated_table|
       paginated_table.each do |page|
         next if page.blank?
         page.unshift(MSG_FORMATTER)

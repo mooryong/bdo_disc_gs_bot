@@ -26,6 +26,10 @@ class GearScoreBot
       GearScoreBot::Command::Regular::Add.call!(event: event, args: args)
     end
 
+    _bot.command :add_pic do |event, *args|
+      GearScoreBot::Command::Regular::AddPic.call!(event: event, args: args)
+    end
+
     _bot.command :get do |event, *args|
       GearScoreBot::Command::Regular::Get.call!(event: event, args: args)
     end
